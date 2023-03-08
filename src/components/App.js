@@ -4,7 +4,7 @@ import Header from './Header';
 import Movie from './Movie';
 import Search from './Search';
 
-const OMDB_API_URL = 'http://www.omdbapi.com/?i=man&apikey=78defae8';
+const OMDB_API_URL = 'http://www.omdbapi.com/?apikey=78defae8&s=man';
 
 
 
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchedData = async () => {
       const res = await fetch(OMDB_API_URL);
-      const {data} = await res.json();
+      const data = await res.json();
       setMovies(data.Search);
       setLoading(false);
     };
@@ -29,7 +29,7 @@ function App() {
     setErrorMessage(null);
 
     const res = await fetch(
-      `http://www.omdbapi.com/?s=${searchValue}&apikey=78defae8`
+      `http://www.omdbapi.com/?apikey=78defae8&s=${searchValue}`
     );
     const data = await res.json();
 

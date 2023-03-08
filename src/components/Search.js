@@ -25,7 +25,7 @@ const Search = (props) => {
         type='text'
       />
 
-      <input onClick={callSearchFunction} type='submit' value='Search Movies' />
+      <input onClick={callSearchFunction} type='submit' value='Search' />
     </form>
   );
 };
